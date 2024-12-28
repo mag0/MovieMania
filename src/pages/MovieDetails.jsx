@@ -6,11 +6,13 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=b497b4e518aaec91a54d2516bec23c68`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
       .then(res => res.json())
       .then(json => setMovie(json));
-  }, [id]);
+  }, [id, apiKey]);
 
   if (!movie) return <div></div>;
 
