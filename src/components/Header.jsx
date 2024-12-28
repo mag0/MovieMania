@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (event) => {
+    event.preventDefault();  // Prevenir comportamiento por defecto
     setIsOpen(!isOpen);
   };
 
@@ -12,10 +13,10 @@ const Header = () => {
     <div>
       <nav className="bg-gray-900 border-gray-800 dark:bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">MovieMania</span>
-          </a>
+          </Link>
           <button
             data-collapse-toggle="navbar-default"
             type="button"
@@ -23,7 +24,6 @@ const Header = () => {
             aria-controls="navbar-default"
             aria-expanded={isOpen}
             onClick={toggleMenu}
-            onTouchStart={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -32,15 +32,15 @@ const Header = () => {
           </button>
           <div className={`w-full md:block md:w-auto ${isOpen ? 'block' : 'hidden'}`} id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-gray-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-black">
-                <li> 
-                    <Link to="/" className="block py-2 px-3 text-white bg-gray-700 rounded md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700">Home</Link> 
-                </li> 
-                <li> 
-                    <Link to="/movies" className="block py-2 px-3 text-white rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Movies</Link> 
-                </li> 
-                <li> 
-                    <Link to="/series" className="block py-2 px-3 text-white rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Series</Link> 
-                </li>
+              <li>
+                <Link to="/" className="block py-2 px-3 text-white bg-gray-700 rounded md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700">Home</Link>
+              </li>
+              <li>
+                <Link to="/movies" className="block py-2 px-3 text-white rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Movies</Link>
+              </li>
+              <li>
+                <Link to="/series" className="block py-2 px-3 text-white rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Series</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -50,3 +50,4 @@ const Header = () => {
 };
 
 export default Header;
+
