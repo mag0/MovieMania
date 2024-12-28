@@ -7,6 +7,8 @@ const MoviesList = () => {
     const [topRatedMoviesList, setTopRatedMoviesList] = useState([]);
     const [upcomingMoviesList, setUpcomingMoviesList] = useState([]);
 
+    const apiKey = import.meta.env.VITE_API_KEY;
+
     const getMovie = (url, setter) => {
         fetch(url)
             .then(res => res.json())
@@ -14,10 +16,10 @@ const MoviesList = () => {
     };
 
     useEffect(() => {
-        getMovie("https://api.themoviedb.org/3/movie/popular?api_key=b497b4e518aaec91a54d2516bec23c68", setTrendingMoviesList);
-        getMovie("https://api.themoviedb.org/3/movie/top_rated?api_key=b497b4e518aaec91a54d2516bec23c68", setTopRatedMoviesList);
-        getMovie("https://api.themoviedb.org/3/movie/upcoming?api_key=b497b4e518aaec91a54d2516bec23c68", setUpcomingMoviesList);
-    }, []);
+        getMovie(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`, setTrendingMoviesList);
+        getMovie(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`, setTopRatedMoviesList);
+        getMovie(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`, setUpcomingMoviesList);
+    }, [apiKey]);
 
     const movieCategories = [
         {name: "Trending movies", list: trendingMoviesList},
