@@ -20,7 +20,7 @@ const Movies = ({ name, lista }) => {
 
   return (
     <>
-      <h2>{name}</h2>
+      <h2 className='m-4'>{name}</h2>
       <div className="relative flex items-center">
         <button onClick={() => scroll('left')} className="absolute left-0 z-10 text-white">
           ◀
