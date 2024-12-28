@@ -1,0 +1,8 @@
+#imagen-movie {
+  transition: all ease 0.3s;
+}
+
+#imagen-movie:hover {
+  transition: all ease 0.3s;
+  scale: 1.2;
+}

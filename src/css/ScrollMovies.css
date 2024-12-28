@@ -1,0 +1,23 @@
+.scroll-container {
+  scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Ocultar scrollbar en Chrome, Safari y Edge */
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Suavizar la transición de color de fondo */
+}
+
+button:hover {
+  background-color: black;
+  color: white; /* Cambiar el color del texto al hacer hover para mejor contraste */
+}
+
