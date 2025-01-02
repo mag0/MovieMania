@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Btn from '../components/BtnBack';
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  const navigate = useNavigate();
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -17,7 +17,7 @@ const MovieDetails = () => {
   if (!movie) return <div></div>;
 
   return (
-  <>
+  <div style={{marginBottom:'18em'}}>
     <div className="flex flex-col items-start bg-gray-800 rounded-lg shadow md:flex-row md:max-w-2xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-4 my-8 p-4">
       <img 
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
@@ -34,15 +34,8 @@ const MovieDetails = () => {
         <p className="text-sm text-gray-400">Original language: {movie.original_language}</p>
       </div>
     </div>
-    <div className="flex justify-end mx-4 my-6">
-      <button 
-        onClick={() => navigate(-1)} 
-        className="px-3 py-2 bg-red-800 text-white rounded hover:bg-red-900 text-base"
-      >
-        Back
-      </button>
-    </div>
-  </>
+    <Btn></Btn>
+  </div>
 
   );
 };

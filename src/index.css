@@ -5,6 +5,8 @@
 body {
   color: white;
   background-color: #111827;
+  min-height: 100vh;
+  position: relative;
 }
 
 h2 {
@@ -13,3 +15,12 @@ h2 {
   font-weight: 700;
 }
 
+li {
+  list-style: none;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

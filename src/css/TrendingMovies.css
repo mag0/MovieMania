@@ -6,3 +6,12 @@
   transition: all ease 0.3s;
   scale: 1.2;
 }
+
+#imagen-serie {
+  transition: all ease 0.3s;
+}
+
+#imagen-serie:hover {
+  transition: all ease 0.3s;
+  scale: 1.2;
+}
