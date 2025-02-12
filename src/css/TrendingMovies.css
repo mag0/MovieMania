@@ -4,7 +4,7 @@
 
 #imagen-movie:hover {
   transition: all ease 0.3s;
-  scale: 1.2;
+  scale: 1.1;
 }
 
 #imagen-serie {
@@ -13,5 +13,5 @@
 
 #imagen-serie:hover {
   transition: all ease 0.3s;
-  scale: 1.2;
+  scale: 1.1;
 }
