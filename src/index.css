@@ -3,24 +3,6 @@
 @tailwind utilities;
 
 body {
+  background-color: #211111;
   color: white;
-  background-color: #111827;
-  min-height: 100vh;
-  position: relative;
-}
-
-h2 {
-  font-size: 1.8em;
-  color: white;
-  font-weight: 700;
-}
-
-li {
-  list-style: none;
-}
-
-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
